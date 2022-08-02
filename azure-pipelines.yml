@@ -4,6 +4,10 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+- name: system.debug
+  value: true
+
 steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.

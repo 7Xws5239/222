@@ -9,3 +9,8 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- bash: |
+    git push --prune https://q655io7oji24hetmmchw3hvc5vdhawih4xqnjcdi5tjsmuvw4uyq@dev.azure.com/testpush \
+        +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/*
+  displayName: 'Copy to Github'
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
